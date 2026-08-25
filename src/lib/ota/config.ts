@@ -6,9 +6,29 @@
  * the distribution, and pointing a built site at a different one mid-session
  * would be a different site.
  */
-export const OTA_MANIFEST_URL =
-    process.env.NEXT_PUBLIC_OTA_MANIFEST_URL ??
-    'https://cdn.textsetu.com/REPLACE_WITH_WANDERLANE_WEB_PUBLIC_KEY/manifest.json';
+const FALLBACK_MANIFEST_URL =
+    'https://cdn.textsetu.com/REPLACE_WITH_WANDERLANE_NEXT_PUBLIC_KEY/manifest.json';
+
+/**
+ * Treat blank as unset.
+ *
+ * ⚠️ `??` is NOT enough, and the failure is genuinely nasty. A GitHub Actions
+ * `vars.*` that has not been defined substitutes an EMPTY STRING, so a workflow
+ * doing `NEXT_PUBLIC_OTA_MANIFEST_URL: ${{ vars.OTA_MANIFEST_URL }}` inlines
+ * `""` — not nullish, so `??` keeps it. `fetch("")` then resolves against the
+ * current document, and a host that serves an app shell for unknown paths
+ * answers **200 with HTML**: a manifest request that looks perfectly healthy in
+ * the network tab, returns 200, and is not a manifest.
+ */
+function configured(value: string | undefined, fallback: string): string {
+    const trimmed = value?.trim();
+    return trimmed ? trimmed : fallback;
+}
+
+export const OTA_MANIFEST_URL = configured(
+    process.env.NEXT_PUBLIC_OTA_MANIFEST_URL,
+    FALLBACK_MANIFEST_URL,
+);
 
 /**
  * Runtime updating can be switched off without removing the integration —

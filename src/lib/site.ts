@@ -8,7 +8,11 @@ import { BASE_PATH } from './base-path';
  * entry here and one namespace in the catalogue — nothing else.
  */
 
-const ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'https://demo1.textsetu.com';
+// Blank-safe for the same reason as OTA_MANIFEST_URL: an unset GitHub Actions
+// variable arrives as "", and `new URL("")` in `metadataBase` throws at build.
+// (NEXT_PUBLIC_BASE_PATH is deliberately NOT blank-safe — "" is its real value.)
+const ORIGIN =
+    process.env.NEXT_PUBLIC_SITE_ORIGIN?.trim() || 'https://demo1.textsetu.com';
 
 /**
  * The time zone every date is formatted in.

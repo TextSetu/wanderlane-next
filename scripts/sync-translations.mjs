@@ -17,9 +17,11 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
+// Blank-safe: an unset GitHub Actions variable arrives as "", which `??` keeps
+// and `fetch` then resolves against nothing useful. See src/lib/ota/config.ts.
 const MANIFEST_URL =
-    process.env.NEXT_PUBLIC_OTA_MANIFEST_URL ??
-    'https://cdn.textsetu.com/REPLACE_WITH_WANDERLANE_WEB_PUBLIC_KEY/manifest.json';
+    process.env.NEXT_PUBLIC_OTA_MANIFEST_URL?.trim() ||
+    'https://cdn.textsetu.com/REPLACE_WITH_WANDERLANE_NEXT_PUBLIC_KEY/manifest.json';
 
 const MESSAGES_DIR = path.resolve('messages');
 const BASELINE_FILE = path.resolve('src/lib/ota/baseline.ts');

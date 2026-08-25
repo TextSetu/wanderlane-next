@@ -2,7 +2,7 @@
     "name": "wanderlane-next",
     "version": "1.0.0",
     "private": true,
-    "description": "Wanderlane — a reference integration of TextSetu content delivery (OTA) in a statically exported Next.js site.",
+    "description": "Wanderlane \u2014 a reference integration of TextSetu content delivery (OTA) in a statically exported Next.js site.",
     "license": "MIT",
     "packageManager": "pnpm@10.30.0",
     "engines": {
@@ -17,8 +17,9 @@
         "typecheck": "tsc --noEmit",
         "check:base-path": "node scripts/check-base-path.mjs",
         "check:rtl": "node scripts/check-rtl.mjs",
-        "check": "pnpm typecheck && pnpm check:base-path && pnpm check:rtl",
-        "placeholders": "node scripts/generate-placeholders.mjs"
+        "check:i18n": "node scripts/check-i18n.mjs",
+        "check": "pnpm typecheck && pnpm check:base-path && pnpm check:rtl && pnpm check:i18n",
+        "photos": "node scripts/fetch-photos.mjs"
     },
     "dependencies": {
         "next": "15.5.22",

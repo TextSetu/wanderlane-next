@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { locales } from '@/i18n/routing';
 import { Eyebrow, Section } from '@/components/ui';
+import { StayQuote } from '@/components/stay-quote';
 
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
@@ -32,9 +33,13 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
     const t = await getTranslations('booking');
 
     return (
-        <Section className="max-w-3xl pt-12">
+        <Section width="narrow" pad="top">
             <h1 className="font-serif text-4xl text-ink">{t('title')}</h1>
             <p className="mt-3 text-lg text-ink-soft">{t('intro')}</p>
+
+            <div className="mt-10">
+                <StayQuote />
+            </div>
 
             <h2 className="mt-12 font-serif text-2xl text-ink">{t('steps.title')}</h2>
             <ol className="mt-5 space-y-5">

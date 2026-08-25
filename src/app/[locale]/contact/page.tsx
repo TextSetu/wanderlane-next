@@ -24,7 +24,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     const t = await getTranslations('contact');
 
     return (
-        <Section className="max-w-2xl pt-12">
+        <Section width="narrow" pad="top">
             <h1 className="font-serif text-4xl text-ink">{t('title')}</h1>
             <p className="mt-3 text-ink-soft">{t('body')}</p>
 

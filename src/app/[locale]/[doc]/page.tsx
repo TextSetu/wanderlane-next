@@ -46,7 +46,7 @@ export default async function LegalPage({
     const { body, updated, usedFallback } = await readLegalDocument(doc, locale);
 
     return (
-        <Section className="max-w-3xl pt-12">
+        <Section width="narrow" pad="top">
             <h1 className="font-serif text-4xl text-ink">{t(`titles.${doc}`)}</h1>
             <p className="mt-2 text-sm text-sand-600">{t('updated', { date: updated })}</p>
 

@@ -1,11 +1,448 @@
 {
-    "_note": "Photography credits. The Unsplash and Pexels licences do not require attribution; we attribute anyway, and a brand claiming to be reputable should behave like one.",
+    "_generated": "scripts/fetch-photos.mjs — do not edit by hand",
+    "_note": "Photography credits, rendered on /about/. The Unsplash licence does not require attribution; we attribute anyway, because a brand claiming to be reputable should behave like one — and because a reader who wants the original should be one click away.",
     "photos": [
-        { "file": "destinations/kyoto-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
-        { "file": "destinations/lisbon-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
-        { "file": "destinations/marrakech-hero.webp", "photographer": "—", "sourceUrl": "https://pexels.com", "license": "Pexels" },
-        { "file": "destinations/reykjavik-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
-        { "file": "destinations/oaxaca-hero.webp", "photographer": "—", "sourceUrl": "https://pexels.com", "license": "Pexels" },
-        { "file": "destinations/hoi-an-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" }
+        {
+            "id": "ljhCEaHYWJ8",
+            "photographer": "Aayush Gupta",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/yellow-tram-in-historic-lisbon-street-ljhCEaHYWJ8",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/lisbon-hero"
+            ]
+        },
+        {
+            "id": "3QL4OjNY3qU",
+            "photographer": "aiden patrissi",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-rainbow-painted-street-in-the-middle-of-a-city-3QL4OjNY3qU",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/reykjavik-card"
+            ]
+        },
+        {
+            "id": "8JNAY3kbfpI",
+            "photographer": "Anastasiia Malai",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-street-lined-with-colorful-flags-and-buildings-8JNAY3kbfpI",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/oaxaca-hero"
+            ]
+        },
+        {
+            "id": "Fru8SXINC5M",
+            "photographer": "Anastasiia Malai",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-yellow-building-with-a-window-and-a-wrought-iron-door-Fru8SXINC5M",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/oaxaca-card"
+            ]
+        },
+        {
+            "id": "uO_LX5f6gWQ",
+            "photographer": "Andrés Beltrán Espinosa",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/wooden-cabin-nestled-amongst-lush-green-trees-uO_LX5f6gWQ",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/sierra-norte-lodge-hero",
+                "stays/sierra-norte-lodge-card"
+            ]
+        },
+        {
+            "id": "YOkWYFO8V8E",
+            "photographer": "Andrés Beltrán Espinosa",
+            "profileUrl": "https://unsplash.com/@darkres",
+            "photoUrl": "https://unsplash.com/photos/a-red-roof-house-nestled-within-a-dense-green-forest-YOkWYFO8V8E",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/sierra-norte-lodge-detail"
+            ]
+        },
+        {
+            "id": "-33ZZ-YflN8",
+            "photographer": "Anna Dziubinska",
+            "profileUrl": "https://unsplash.com/@annadziubinska",
+            "photoUrl": "https://unsplash.com/photos/assorted-color-building-under-cloudy-blue-sky-during-daytime--33ZZ-YflN8",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/graca-rooftop-detail"
+            ]
+        },
+        {
+            "id": "WjZ3_lhGmvo",
+            "photographer": "Ashley Galeote",
+            "profileUrl": "https://unsplash.com/@ashleysummer1",
+            "photoUrl": "https://unsplash.com/photos/a-tree-in-front-of-a-pink-building-WjZ3_lhGmvo",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/casa-jalatlaco-detail"
+            ]
+        },
+        {
+            "id": "PsJxIASNa-U",
+            "photographer": "ayumi kubo",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-room-with-a-view-of-trees-and-water-PsJxIASNa-U",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/kamo-riverhouse-hero",
+                "stays/kamo-riverhouse-card"
+            ]
+        },
+        {
+            "id": "3Jb1wgUwG4M",
+            "photographer": "AZIZ KOURI",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/spacious-green-lawn-and-swimming-pool-with-lounge-chairs-3Jb1wgUwG4M",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/palmeraie-annex-hero",
+                "stays/palmeraie-annex-card"
+            ]
+        },
+        {
+            "id": "jUxMsNZZCJ8",
+            "photographer": "Caleb Jack",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-stone-path-leading-to-a-building-with-a-clock-tower-in-the-background-jUxMsNZZCJ8",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/kyoto-card"
+            ]
+        },
+        {
+            "id": "eXA_Og3-a7U",
+            "photographer": "Chelaxy Designs",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-turf-roofed-house-built-into-a-grassy-hillside-eXA_Og3-a7U",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/reykjavik-turf-house-hero",
+                "stays/reykjavik-turf-house-card"
+            ]
+        },
+        {
+            "id": "IydOZ26smj0",
+            "photographer": "Chelaxy Designs",
+            "profileUrl": "https://unsplash.com/@chelaxydp",
+            "photoUrl": "https://unsplash.com/photos/three-small-black-houses-with-grass-roofs-IydOZ26smj0",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/reykjavik-turf-house-detail"
+            ]
+        },
+        {
+            "id": "XeHV9a4ArdA",
+            "photographer": "diego fabra",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/colorful-spices-displayed-in-conical-piles-at-a-market-XeHV9a4ArdA",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/marrakech-card"
+            ]
+        },
+        {
+            "id": "3DqwZFPKjWs",
+            "photographer": "Einar H. Reynis",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-view-of-a-city-with-snow-on-the-ground-3DqwZFPKjWs",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/reykjavik-hero"
+            ]
+        },
+        {
+            "id": "_cCHTNiEid8",
+            "photographer": "Erik Fabian",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/coastal-village-on-a-peninsula-at-sunset-_cCHTNiEid8",
+            "license": "Unsplash",
+            "usedBy": [
+                "site/hero"
+            ]
+        },
+        {
+            "id": "SNecSSyXxVs",
+            "photographer": "Flora Hon",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-narrow-street-lined-with-wooden-buildings-SNecSSyXxVs",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/kyoto-hero"
+            ]
+        },
+        {
+            "id": "7q7qidEdz5M",
+            "photographer": "Florian Delée",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/old-wooden-boat-docked-near-colorful-buildings-on-water-7q7qidEdz5M",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/thu-bon-boathouse-hero",
+                "stays/thu-bon-boathouse-card"
+            ]
+        },
+        {
+            "id": "5f2fp-CAgXM",
+            "photographer": "Florian Delée",
+            "profileUrl": "https://unsplash.com/@florian_delee",
+            "photoUrl": "https://unsplash.com/photos/two-old-wooden-boats-docked-on-a-river-5f2fp-CAgXM",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/thu-bon-boathouse-detail"
+            ]
+        },
+        {
+            "id": "v9wzOYPmD0k",
+            "photographer": "Gunnar Ridderström",
+            "profileUrl": "https://unsplash.com/@gunnarridder",
+            "photoUrl": "https://unsplash.com/photos/courtyard-with-intricate-tilework-and-arched-colonnades-v9wzOYPmD0k",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/riad-zitoun-detail"
+            ]
+        },
+        {
+            "id": "_k0Pyd1uMEc",
+            "photographer": "Hans",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-living-room-with-a-fire-place-and-a-chair-_k0Pyd1uMEc",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/seltjarnarnes-cabin-hero",
+                "stays/seltjarnarnes-cabin-card"
+            ]
+        },
+        {
+            "id": "uX8wVtW5PQo",
+            "photographer": "Hans",
+            "profileUrl": "https://unsplash.com/@hansphoto",
+            "photoUrl": "https://unsplash.com/photos/a-living-room-with-a-stove-and-a-large-window-uX8wVtW5PQo",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/seltjarnarnes-cabin-detail"
+            ]
+        },
+        {
+            "id": "uMrKrQ-afIc",
+            "photographer": "JD-Photos",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/traditional-japanese-room-with-tatami-mats-low-table-and-sofa-uMrKrQ-afIc",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/machiya-nishijin-hero",
+                "stays/machiya-nishijin-card"
+            ]
+        },
+        {
+            "id": "7SNsq7MpbzA",
+            "photographer": "João Reguengos",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-view-of-a-city-from-a-hill-7SNsq7MpbzA",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/graca-rooftop-hero",
+                "stays/graca-rooftop-card"
+            ]
+        },
+        {
+            "id": "Gk0MAP8A7Cw",
+            "photographer": "Kelcie Papp",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/white-and-brown-bedspread-Gk0MAP8A7Cw",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/alfama-atelier-hero",
+                "stays/alfama-atelier-card"
+            ]
+        },
+        {
+            "id": "PM6-1S6uZvQ",
+            "photographer": "Krzysztof",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/elegant-colonial-building-with-arched-walkways-and-columns-PM6-1S6uZvQ",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/casa-jalatlaco-hero",
+                "stays/casa-jalatlaco-card"
+            ]
+        },
+        {
+            "id": "pSf_Nj7QzjQ",
+            "photographer": "Margo Evardson",
+            "profileUrl": "https://unsplash.com/@stadinstudio",
+            "photoUrl": "https://unsplash.com/photos/resort-swimming-pool-with-palm-trees-and-buildings-pSf_Nj7QzjQ",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/palmeraie-annex-detail"
+            ]
+        },
+        {
+            "id": "zVCHXZ_64CM",
+            "photographer": "Ngoc Nguyen Phuong",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/modern-residential-building-surrounded-by-lush-greenery-and-trees-zVCHXZ_64CM",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/cam-thanh-garden-hero",
+                "stays/cam-thanh-garden-card"
+            ]
+        },
+        {
+            "id": "UgIMFOlA_pk",
+            "photographer": "Ngoc Nguyen Phuong",
+            "profileUrl": "https://unsplash.com/@natalienpngoc",
+            "photoUrl": "https://unsplash.com/photos/modern-townhouses-with-trees-and-colorful-foreground-UgIMFOlA_pk",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/cam-thanh-garden-detail"
+            ]
+        },
+        {
+            "id": "1jWrspkfhPg",
+            "photographer": "Nijat Hajiyev",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-view-of-a-city-with-red-roofs-1jWrspkfhPg",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/lisbon-card"
+            ]
+        },
+        {
+            "id": "TguuCt67ark",
+            "photographer": "Phú Nguyễn Đạt",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-river-running-through-a-city-next-to-a-yellow-building-TguuCt67ark",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/hoi-an-hero"
+            ]
+        },
+        {
+            "id": "_K3iqG1PFYs",
+            "photographer": "Qeis Ismail",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/a-person-ladles-food-into-a-small-container-_K3iqG1PFYs",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/kyoto-morning-market-card"
+            ]
+        },
+        {
+            "id": "s4B8h26o0eY",
+            "photographer": "Sandra Mosconi",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/two-windows-on-a-tiled-building-facade-s4B8h26o0eY",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/lisbon-tile-workshop-card"
+            ]
+        },
+        {
+            "id": "Kloc39u0yhk",
+            "photographer": "Simon Gagner",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/traditional-courtyard-with-intricate-wooden-screens-and-pink-walls-Kloc39u0yhk",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/riad-zitoun-hero",
+                "stays/riad-zitoun-card"
+            ]
+        },
+        {
+            "id": "qDZ-Xd8dX6w",
+            "photographer": "Steffen Bertram",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/white-and-red-paper-lanterns-qDZ-Xd8dX6w",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/hoi-an-card"
+            ]
+        },
+        {
+            "id": "6aem_R8-nPw",
+            "photographer": "Sunao Noguchi",
+            "profileUrl": "https://unsplash.com/@fwm3u",
+            "photoUrl": "https://unsplash.com/photos/traditional-japanese-room-with-circular-window-overlooking-lush-greenery-6aem_R8-nPw",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/machiya-nishijin-detail"
+            ]
+        },
+        {
+            "id": "tYOAFpKvOxk",
+            "photographer": "Tatiana Mokhova",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/two-men-are-preparing-food-in-a-kitchen-tYOAFpKvOxk",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/oaxaca-mole-kitchen-card"
+            ]
+        },
+        {
+            "id": "27HacQwqvA0",
+            "photographer": "Toomas Tartes",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/two-women-riding-boat-beside-brown-house-27HacQwqvA0",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/hoi-an-basket-boat-card"
+            ]
+        },
+        {
+            "id": "wwlBIX5U5tQ",
+            "photographer": "Vaz Mann",
+            "profileUrl": "https://unsplash.com/@vazmann",
+            "photoUrl": "https://unsplash.com/photos/a-blue-and-white-building-with-windows-and-balconies-wwlBIX5U5tQ",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/alfama-atelier-detail"
+            ]
+        },
+        {
+            "id": "3rFq2376W60",
+            "photographer": "waa towaw",
+            "profileUrl": "https://unsplash.com/@toowaaw",
+            "photoUrl": "https://unsplash.com/photos/traditional-japanese-buildings-reflected-in-a-calm-river-at-sunset-3rFq2376W60",
+            "license": "Unsplash",
+            "usedBy": [
+                "stays/kamo-riverhouse-detail"
+            ]
+        },
+        {
+            "id": "N7C8NlKZxAI",
+            "photographer": "Yanshu Lee",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/white-wooden-boat-on-sea-during-daytime-N7C8NlKZxAI",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/reykjavik-tide-pools-card"
+            ]
+        },
+        {
+            "id": "SHUNl49hr9I",
+            "photographer": "Youssef Taghlaoui",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/bustling-marketplace-filled-with-various-goods-and-shoppers-SHUNl49hr9I",
+            "license": "Unsplash",
+            "usedBy": [
+                "destinations/marrakech-hero"
+            ]
+        },
+        {
+            "id": "hu4gIFQKubY",
+            "photographer": "Zoshua Colah",
+            "profileUrl": null,
+            "photoUrl": "https://unsplash.com/photos/hands-preparing-flatbread-on-a-large-griddle-hu4gIFQKubY",
+            "license": "Unsplash",
+            "usedBy": [
+                "experiences/marrakech-bread-oven-card"
+            ]
+        }
     ]
 }

@@ -13,7 +13,7 @@ import { Section } from '@/components/ui';
 export default function NotFound() {
     const t = useTranslations('notfound');
     return (
-        <Section className="max-w-xl pt-20 text-center">
+        <Section width="narrow" pad="top" className="text-center">
             <h1 className="font-serif text-4xl text-ink">{t('title')}</h1>
             <p className="mt-3 text-ink-soft">{t('body')}</p>
             <p className="mt-6">

@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 import { localeHref, locales } from '@/i18n/routing';
-import { Card, Picture, Section } from '@/components/ui';
-import { destinationSlugs, stayPath, stays, type DestinationSlug } from '@/lib/site';
+import { LinkCard, Picture, Section, Stat } from '@/components/ui';
+import {
+    bookingCurrency,
+    destinationMonths,
+    destinationSlugs,
+    stayPath,
+    stays,
+    type DestinationSlug,
+} from '@/lib/site';
 
 export function generateStaticParams() {
     return locales.flatMap((locale) => destinationSlugs.map((slug) => ({ locale, slug })));
@@ -35,61 +42,117 @@ export default async function DestinationPage({
     const t = await getTranslations('destinations');
     const s = await getTranslations('stays');
     const c = await getTranslations('common');
+    const format = await getFormatter();
+
     const here = stays.filter((stay) => stay.destination === (slug as DestinationSlug));
+    const from = Math.min(...here.map((stay) => stay.nightly));
+    const sleeps = Math.max(...here.map((stay) => stay.sleeps));
 
     return (
         <>
-            <Section className="pt-12">
-                <p className="text-xs uppercase tracking-wide text-sand-600">
-                    {t(`items.${slug}.country`)}
-                </p>
-                <h1 className="mt-1 font-serif text-4xl text-ink md:text-5xl">
-                    {t(`items.${slug}.name`)}
-                </h1>
-                <p className="mt-3 max-w-2xl text-lg text-ink-soft">{t(`items.${slug}.tagline`)}</p>
+            <div className="relative">
                 <Picture
-                    src={`/img/destinations/${slug}-hero`}
+                    slot={`destinations/${slug}-hero`}
                     alt={t(`items.${slug}.heroAlt`)}
-                    width={1200}
-                    height={640}
+                    shape="hero"
+                    sizes="100vw"
                     priority
-                    className="mt-8 aspect-[15/8] w-full rounded-card object-cover"
+                    className="max-h-[56vh] min-h-[300px] w-full"
                 />
-                <div className="mt-8 max-w-2xl">
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/75 to-ink/5" />
+                <div className="absolute inset-0 flex items-end">
+                    <div className="mx-auto w-full max-w-6xl px-5 pb-8">
+                        <p className="text-xs uppercase tracking-wide text-sand-100">
+                            {t(`items.${slug}.country`)}
+                        </p>
+                        <h1 className="mt-1 font-serif text-4xl text-white md:text-5xl">
+                            {t(`items.${slug}.name`)}
+                        </h1>
+                        <p className="mt-2 max-w-2xl text-lg text-sand-100">
+                            {t(`items.${slug}.tagline`)}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <Section pad="tight">
+                {/*
+                  * "At a glance" is four derived facts, not four translated
+                  * strings: the counts come from `site.ts`, the money from
+                  * `Intl.NumberFormat` and the months from `Intl.DateTimeFormat`.
+                  * Only the four LABELS are copy.
+                  */}
+                <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <Stat
+                        label={t('glance.stays')}
+                        value={c('meta.staysHere', { count: here.length })}
+                    />
+                    <Stat
+                        label={t('glance.from')}
+                        value={format.number(from, {
+                            style: 'currency',
+                            currency: bookingCurrency,
+                            maximumFractionDigits: 0,
+                        })}
+                    />
+                    <Stat
+                        label={t('glance.sleeps')}
+                        value={c('meta.upTo', { count: sleeps })}
+                    />
+                    <Stat
+                        label={t('glance.season')}
+                        value={format.list(
+                            destinationMonths[slug as DestinationSlug].map((m) =>
+                                format.dateTime(new Date(Date.UTC(2027, m, 1)), { month: 'short' }),
+                            ),
+                            { type: 'conjunction' },
+                        )}
+                    />
+                </dl>
+
+                <div className="mt-10 max-w-2xl">
                     <h2 className="font-serif text-2xl text-ink">{t('labels.guide')}</h2>
                     <p className="mt-3 leading-relaxed text-ink-soft">{t(`items.${slug}.body`)}</p>
                 </div>
             </Section>
 
-            <Section>
+            <Section pad="bottom">
                 <h2 className="font-serif text-2xl text-ink">
                     {t('labels.stays', { city: t(`items.${slug}.name`) })}
                 </h2>
                 <ul className="mt-6 grid gap-6 sm:grid-cols-2">
                     {here.map((stay) => (
                         <li key={stay.slug}>
-                            <Card>
-                                <a href={localeHref(locale, stayPath(stay.slug))} className="block">
-                                    <Picture
-                                        src={`/img/stays/${stay.slug}-card`}
-                                        alt={s(`items.${stay.slug}.heroAlt`)}
-                                        width={600}
-                                        height={400}
-                                        className="aspect-[3/2] w-full object-cover"
-                                    />
-                                    <div className="p-5">
-                                        <h3 className="font-serif text-xl text-ink">
-                                            {s(`items.${stay.slug}.name`)}
-                                        </h3>
-                                        <p className="mt-2 text-sm text-ink-soft">
-                                            {s(`items.${stay.slug}.tagline`)}
-                                        </p>
-                                        <p className="mt-3 text-sm font-medium text-sea-deep">
+                            <LinkCard href={localeHref(locale, stayPath(stay.slug))}>
+                                <Picture
+                                    slot={`stays/${stay.slug}-card`}
+                                    alt={s(`items.${stay.slug}.heroAlt`)}
+                                    shape="card"
+                                    imgClassName="transition duration-500 group-hover:scale-105"
+                                />
+                                <div className="p-5">
+                                    <h3 className="font-serif text-xl text-ink">
+                                        {s(`items.${stay.slug}.name`)}
+                                    </h3>
+                                    <p className="mt-2 text-sm text-ink-soft">
+                                        {s(`items.${stay.slug}.tagline`)}
+                                    </p>
+                                    <p className="mt-3 flex items-center justify-between text-sm">
+                                        <span className="text-ink">
+                                            {c('meta.perNight', {
+                                                amount: format.number(stay.nightly, {
+                                                    style: 'currency',
+                                                    currency: bookingCurrency,
+                                                    maximumFractionDigits: 0,
+                                                }),
+                                            })}
+                                        </span>
+                                        <span className="font-medium text-sea-deep">
                                             {c('cta.viewStay')}
-                                        </p>
-                                    </div>
-                                </a>
-                            </Card>
+                                        </span>
+                                    </p>
+                                </div>
+                            </LinkCard>
                         </li>
                     ))}
                 </ul>

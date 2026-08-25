@@ -1,0 +1,281 @@
+{
+    "_generated": "scripts/fetch-photos.mjs — do not edit by hand",
+    "_note": "Inline 24px previews, one per image slot. Painted behind the real photo so a slow connection sees the shape of the image rather than an empty box, with no JavaScript involved.",
+    "previews": {
+        "destinations/hoi-an-card": {
+            "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAABwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoHgA59UbwLgYZWppTOGVEpB8S4MDigAAP6pUBccludIrytk95xhQfK0h62teG5GcVWJbDbeGBhsNXu/mbmcxJTdDCEhsj6gGx73TQjlYAhOzYtr6bQ2zhjf5ywXQFuPzPNpbdRs5qyaABHmzqZdKNOUe8zJyUtux60K6uEX+j/fBItRfuKSH4uSFbxojfMl8QGn/a3i2UdK5E7KMmmWwMwB/IqcJRFLL/NWvjRSz6slmw1SDxY432GOBnZbgAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/hoi-an-hero": {
+            "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBACdASoYAA0APu1kqk4ppaQiMAgBMB2JZgCdDiAAKZ6lSbiXZ9OGLJeAAP7F/Hwfhff2nTPLKerbRdR+dBWCCw1B/p9Ro/7Mtyx758LnlIy5tFPkKyMR7jrcOndNwyXoPvvpiFexfg/b+TlFKXUoDR8sPs/BSAiosjX+5JDK/3pTRuswPfnqx/ynw8YNw1i4zR/hRf0D3L92r7J8lEpWwHQZ6fjnxIAAAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "destinations/kyoto-card": {
+            "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdACP7TuKcWOV6/1tz4AD+n8SNZYMTEqdtLrRU9u8I9UeWBwMAR2WKNa7UD/BBAPvGlTCqWUhStKfBF56BXxPtXgdUNYGEhQNA+X0A//2WREQhTg07sd9IF6FN0qWFlzEfIdtOewQ+fKxcjlvNFDxlWKhMCMb3kVGKlNVahimaUwAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/kyoto-hero": {
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JYwCdACKrom1QA04S1/ZwAAD+LoRuQcdQivytw7nN2dvt7gq0VRAP7G4lwJZfuQZazZwAhD7+/8Ph0V8zSCidpw6rZjJEQ16jl5IswuptJfXB6G6eIviFWUtLknQjDt0lneGhw6M+PWAA",
+            "width": 1200,
+            "height": 640
+        },
+        "destinations/lisbon-card": {
+            "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdAB6tvkgwsQT+hmYA/G1LtflrJyeZlkBUdaDVOx/IwQheoZFXd3E1485kemUW82lh6jQqZxpgq9K1enIz1FKwOtw4vTiK4dXM6oNPMrl7xDx27gMxdrm2mjX4oenE3+1AAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/lisbon-hero": {
+            "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACQAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JYgCdMoAASdVZXSwAAPc+OKxKNPGdtuG3/P7fFSAZBnGRenDqRCEcFak5YmvR2jiaUMzl59QF43Izf02B6WPFrZoZ9zjdMcKbTfuZqdNzXMv/CS1nb1uPS540g3NPqXb12BgE1UZC2od9QbJlT2FOuXKYQNqLMgksnMBv3CMrVt9ODbveTeEAAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "destinations/marrakech-card": {
+            "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAAAwBQCdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoHgAKoFAB7rjA5kctU+JyQ4e2di8AD9l/x/cOPCDoUZnZWQh3wy6im7SoO/sAMoRBjYRFQlSPDc3UQ46JgeCZim4Zes/g29UAbrNnvOLW9+wM/POD9w7mPs6HdkTqxUU0zuDA5YnYrX8AUsZ8gFC1DEXIUIaa94qitoi1Kevn/3E+vOuwK8eNN5PhaZp9RrJh1A3P2WEMLMAvL04w4Dee99LetcCazvZvalXPi5BMAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/marrakech-hero": {
+            "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAQBACdASoYAA0APu1iqU2ppaOiMAgBMB2JbACdMoR3ABmo/d37WwEJsAD+wHdmM8amEytCbBdD4wK0FrdFKZyqoySc9hqkRndelXDh5GcCdbzHwldZKLyGXFE6s9el+LUOsv2ZT9T+ZVNPfdaBslh1S7lfckb42zerc5mcFzgMCOfYrwoCHAqNE+OabLaHqocHCeePFZwefTN1ZVXbNlKF4AA=",
+            "width": 1200,
+            "height": 640
+        },
+        "destinations/oaxaca-card": {
+            "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoAvQTQYgQVk2tDAwXsAAMtBdFSey/196LyGdCVtHrDUeiwddn3+gMY+1dNCF1yN64c5KN8f8L+Vu5dsPtLIi342VlKQUjBIfgG7wjv8sWqT1ZD1fTGovZ+BTbufLtizss7CPtYF3p1j8PL2BFBDkTHHwxyaLKN93JfoYSVGJi5bGFmL6o3GAAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/oaxaca-hero": {
+            "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JbACdMoR3ABeqVclRBWAA/qifmNe9VzsK7uAFAxjF7iwU71+MxTju5q3eaLMsUD6S+EwRi7HHar7iGElHHoRpV0CkLAXV/mXhzmdzX+Lp3S2gNhZ/aXL7jNTeut0cn9a/zAAA",
+            "width": 1200,
+            "height": 640
+        },
+        "destinations/reykjavik-card": {
+            "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdINjDgCjEFjnmQzVN4NpPxAAA/oQTwweQmByCGTT5k4C//E02JYITd+YaRLmZFy8jR/SE/KdNb0pg7DroyUHsuc0T8Bljy3Q698neMMUaYaCoC7+oAfg6r6QcV+6YKPr/MOPTGKKT6hukMjesx6BKKV+l3/Bnd6WM1QAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "destinations/reykjavik-hero": {
+            "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwAwCdASoYAA0APu1iqk2ppaQiMAgBMB2JYwC7ACKd6gA+WGpVwAD+4apJpzmxHzAjGJntVq2u9eZJ9zOLfeeAdnAWyOzRpjM99tmNXtoiXeQ4oaKbW7mrDLJmcPOmYK5kImkh7v7nz4TGKJ37oi76sYKohYzLeOSy5u/J6xTzAAAA",
+            "width": 1200,
+            "height": 640
+        },
+        "experiences/hoi-an-basket-boat-card": {
+            "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdAYuad6HOV9T39K6AAM4aFizofayqPfnNndV5Kta4k/SvB9jkbzo3+I9OWaXuortVpXRjYzLPA6U41ZpOD2I2dSsHCy0dien5cy+shU6Ve2729MJHi4a2Iq7m9t/Zl84ugdgeSvFG/SyAepBIE/tYH/tU+puiNxOinz2/GRaVSgzhs9LPkua2JSy04OPD33RpuaN2uGf5AE6sxskpuIL/F0AAAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "experiences/kyoto-morning-market-card": {
+            "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdMvJOAbVUwtXx//Bb0l+bOnOAAP696sOexSioYvGEH7hQvPRi8dojVxpnD5bggwc2JxwO5ORdXc9L0kmgllMkCWZ8mVrIi/dVn7WQ55nh4u4YfEtyPidzGQ9R+/7hfVVnGL9xO6YtHj7U0UkEwy9gAZR0fQAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "experiences/lisbon-tile-workshop-card": {
+            "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdABDXEVdO1HDAAPItzPLBmlVwImng5ZVh0L4aXaMIh5ibYqkme+S2/JmG62NLksHh0LVQ2R9nTY2tBJ8toAkH8HEYKgOTBZkacd+ubHgA",
+            "width": 1200,
+            "height": 800
+        },
+        "experiences/marrakech-bread-oven-card": {
+            "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaQAD5LHahaRF6gkdf77Lp4XAAP7pTk6zr6pM5XJO0cMhF4pBty5jVMCjF1RKJupG3dr5OfWZ9Fom1zDhMuwLB4F6PmQfRDhS6UzZWNl7n+fpxIhfiDUKorhe7VYNf0vpRc9nrYb6ZRXLyYiOuxrr8Kzx6YE2+LSm0WEQ/U7/zAxXdvJzBoqQAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "experiences/oaxaca-mole-kitchen-card": {
+            "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoYABAAPu1iqk2ppaQiMAgBMB2JYwC2yCHKVJa52nIgeRVwAP7zG87imDHibxV2CPaP9HcW6AwZ7lpm8o44j2xmVJV0HhEUnI7B0/zjHMSzOmDMHiANQDb/Bxiszz2GPm+pKn5kki+cp/VYKsaRsULzQGSp1qIvcuhe2mNYnihoggAA",
+            "width": 1200,
+            "height": 800
+        },
+        "experiences/reykjavik-tide-pools-card": {
+            "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoYABAAPu1iqk4ppaQiMAgBMB2JQBOkCYhhGNtnoVpXZx7ggAD+W3rFz7poxn+OJt+mUMv47dDO2z5R5P69aPtzAFB28gNBpnflfqTk5R9jbvjgiFvneIXVUCTeHOgRQDQOZPduYAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "site/hero": {
+            "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoYAAoAPu1iqk2ppaQiMAgBMB2JYwCdACFnI7BMrufgAAD30Y2S3264hICKkIcrOXHx6ekeXDDOIlc6EAlDVf2bAyb03jWZRMcGnvyfdcpDXgRputKNe29WcAA=",
+            "width": 2000,
+            "height": 857
+        },
+        "stays/alfama-atelier-card": {
+            "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JQBdnKAAcbgOAwMMqdyN/5cCAAP7TQv+bkOZea/++bBaM3RpKAyabfHULZZ5l8BTDRSl5ztu94k13ohOniVISlH8/GEtZtfE2y9j+tXYAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/alfama-atelier-detail": {
+            "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAACQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdH8GJ/gPI4tlzyDGFgyVIIdAA/tqu3qc0RtQWm8Vv3sFTocj0BjNTVhws7Ujqzk75x6cxuaMYnR5jItPxPrF9jpylgi0GuQKu5bOncD2NVrQymfXvyffg3NfBgLBnGy7k/BraA7JSfWfqPWHHfs2GfbkaMco+Fo6uOUjcoR5vWBMpuqwaKt2nrG4IDKylRa/v7hdeUoAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/alfama-atelier-hero": {
+            "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JYgCw7CHKVf3Lv4iIYAD+00ccWQaKtNbdnEcmxIqSqylKDJSC1hMzC5Dpdr2OovxaIjRmU6Dj3YgEegIo/VqIHGfI+3ZON+/QragOWoO2qDNVTN+fRDEAAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/cam-thanh-garden-card": {
+            "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgC7MoBOACJ3Dklwvpb0hvIpcAAA/tg5Y/wkM2QmM/FtQfgh6YSQmN0S5S4KbWFTYCaWyWBF07AuoxafoKEgSxomzTi0BcUS/CVJQeae4JmouHxqHiBWoxY7O85XeuhtBZ8tYMHKDoVmXfvvHGzTc8aTgnFoc6leplNzQv03Es6XcHiJC3TFkVQAycAavRYgBEMAAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/cam-thanh-garden-detail": {
+            "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUA3YAWy451PTqWbRvWvAAP7VeAEuQ/BegyqL9aYhPYdUUOMyRDtAhZ06jJmEvf5ZtmZA8BwagOGM1Z6yQnWHvoKlUtJaTq6p6H/ocUVoP7a/UW3pVPmEkA2W9Afpdh6b9GPo/gaURpIMrLHZF9I67p1NxRaRoAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/cam-thanh-garden-hero": {
+            "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYAA0APu1iqU2ppaOiMAgBMB2JZgCsLwABnKYbpL+vfByYaCVAAP7hXm7ZLkozuF7zNlK6bLfYkV9NwiwvJnsx6trBPTOFwo5qFXY6JUt5yuXxrEabX2o6ANrGJHS/Yg4o0H4DquqOpzqK7UT8+30z+9N1dOyTjw8FdO0uPE/MtGqt7ACHcPvUhW4FciXLd27UWgaRHgAAAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/casa-jalatlaco-card": {
+            "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUAS4glyFRNbZ5Qz08ADNbV2qiR3M+fjPsPy42z4qQO0Oe4+D8OCOW2dwqEwkyKbKoXw/WCdyb00WmBtZW5jT6Yu7vzFwInI7tp/8Z6lTux0pk1VaNb7yniP/aevJvX+abvknqOrG/I2WNJrVZAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/casa-jalatlaco-detail": {
+            "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADwAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JYwCdACIdtDIpqWu/bQyoAP7TvHPYFAVbF4Cn+NPGxqM8ecUAAT+YZ5eTjMaqe1sLeA28gF2KY5BDF/XXIbqkC+IO01+yBIuuVRNvyY5V/KyvxY10ZSVPvcm3E78hr+P1OuK09xw3jklHbEEjOKiRVcm70fR9iKQhmpIVO2BQ5AAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/casa-jalatlaco-hero": {
+            "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACQBACdASoYAA0APu1iqU2ppaQiMAgBMB2JQBOgZYMABswDE49YmLcY+cAkogAA4S9ScJ/9YtQo1D1myD1P8CzQayyH67Iqo3qGtja8uYLrWcJ8ij1AF3WnUMR+hcgXAKWgbJwvKQo2jPT0Nwhhk0SGvSkrmxV6Pyk2rcUBxq0hshWsrgmPPzZ4SdtQBg+572qzO3DsAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/graca-rooftop-card": {
+            "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoRwFf/gMMLB4XCsSmzIeUgAyrlm5I0BpJMdq2txWGmeuNloxXU9w59LYac/8AhwpwyhceuCi6OfnGRbCGJQd8ftAset5vFlQkKo+aMDJDHCKHaT3YKfMTgui+QZ+7MZGP+RrYqrsNjHhBFW7Gvb5AdGZKu3wSytCY/DFkKg1qhLYUucoX7+AAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/graca-rooftop-detail": {
+            "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoADKjEVMwhcfayuLgAAzTaIcFHspzK3aiNYNekf4ZYMoX/kLRD3/8RjHplk6Ac/6ZjsRNqNrJ/nWX4n/at8L35RX0/KmwlEhIRBWzD7l1yFczYFL841YCzDc+8munswa+skG8hsVvlgsCQuP4baJvI/+wc7LRrb2tTR6dhOYM6zTQtjwAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/graca-rooftop-hero": {
+            "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoYAA0APu1iqU2ppaOiMAgBMB2JagCdIDZDArRR/lEjlqMRj6XKAAD8XtqXRzYEUh6/l8ieymDE6abmVtX8AgWn2ig9ctZw1V61tVvNt3Fe9a4nXZCthe/B3js/qN0roI9Af98N44Ob4rTJxfqFy1fVDHIYcbKQt88Tg5ei+MyYMnCDyltYBiE8Rnx58liPSQDe+i2gAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/kamo-riverhouse-card": {
+            "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCw7BslFDKFG4jRgAD+volyBg+3iJBVW/8V8pDlcqgUYm1T58fOy2a1UvQSbxRnlvQI6ewur+0UmHMvmo777LsMplMR7ZFXwPsgQR+lGrlKp/DtTHUVs5fyreqgeXNlJ47UWxb9phCc7uOtLI+hXKNZIm8AAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/kamo-riverhouse-detail": {
+            "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoYABAAPu1kqk4ppaQiMAgBMB2JZwDHFDfJ/gPGx2tT96bbDUAA/mbdrBRuN+HFlYdwAKupuaextmWKrhEX++SC7GlLAO5QvXN5xTEhi8JsYuWU4ItTarY7K15w0GDT89HDxnQ2UFVm5m6BLJXskMG5BzZ5jLJeq2s1NMXWOwqt1AAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/kamo-riverhouse-hero": {
+            "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoYAA0APu1iqU2ppaQiMAgBMB2JYgCdMoR8eCkxaUQIkwT4hkgA8ox8YObj/0Y6Yuyo7/FRN/7zGo/Zb7cuTYwHHprCnETdpYj33CzDTbtQL+K8Hh5Mr45ogmzYrLgvVc0KmwM5rO3cR5PV1IfF5oGfZFD6Lp6LBekgAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/machiya-nishijin-card": {
+            "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMh1EOVsXqVxCJ4bcj/XAAA/uwF8Je0N4j0ykzeJUTGgavCMM7ij0rlOLRb7w+f5I5KaWwlnjtjVNLUUfZFf42OlRmgw1kLdCe6Co+Fj3bPZvwkp1xS5/lJf+8GqS4q1Gx7Dpu/QfQPzCsh8hto5Lx2bIFGqDZXda3EGKXy8DIi2bIauE1ePEPFkK75LtTDBGmVVnrswAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/machiya-nishijin-detail": {
+            "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoYABAAPu1iqk4ppaQiMAgBMB2JYwDCgCHfhgetGgI0/vEAAP7wyLTsnnLJjFK0E/8rgitcgsewc17SMWiqpG88rjRvbxrMSOYTpVSD0/PYeFPUQW6mL5wVYI2JDgFk/2xS+tFMoXNEAAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/machiya-nishijin-hero": {
+            "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACQBACdASoYAA0APu1iqU2ppaOiMAgBMB2JbACdMoRwAdCsxkhA2Q1vplTtwAAA/cXy3P640/RzdDzA5YqDkOZ9YfkKRNPNL7BgUJzS9ALvRSVgACPh9lbyXEkg+TjYGxjhp8eV0Q7UlmK/J9bzYKgazWZeM2QLpLfMt07yloVo/IhjcuqbzE5PZd39lvzm0xDMorwHMEjUSLSq447i4mFxfNW36cIAAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/palmeraie-annex-card": {
+            "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwBACdASoYABAAPu1kqU2ppaOiMAgBMB2JZgCdMoRwFf/gPQ/7kdi0SBqsqUzgAP6xZWMYgMOXlu1VlcDSOdxMpbmnURsxG0P3DLtt0X+QOlInE0m8/11ijV6OGXTWi8JPhVMkCYa2TIsExv8DH1x9xRBzveKwONpkjAN0x/5rB/bwmwxAcAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/palmeraie-annex-detail": {
+            "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JaAC7ACFf9IiO2yNfZ42AAP7vw4RAn0Jn3xilH8N031cVKXAIBJzO8GsAK9bw9Po1TnRUZGRB9hqW37dlLqWh24u5etFj4bV0lL4VQOmOZ8IHXTPdQd8r+cFgK/Q+f+7ZOCaK/R/V65ESMxcg+GgJeWe634xDxORp6IbSFhLRfODvZOir8lAAAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/palmeraie-annex-hero": {
+            "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoYAA0APu1iqk4ppaQiMAgBMB2JZgCdMoGv/gPKR0DUfcSqOA52gAD82TQBO+GLQ2ZICPfoyqzWXmJ8CAuxjT4wXjDBwoMRofjbGLXynVjcNYh3aj2qj/JOz35fvdFiE1c2d9+b+I80MbINAurgj+S1xWVGNxa/iQXAAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/reykjavik-turf-house-card": {
+            "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOgA9LtRsc3b6jDdufdgAD+62bGG+PwN1fNkIgWkVZuvlmQvIAGFllmuKF2HX8oYE3N3MiezW2GwucMlCq9+A6HHIo5AAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/reykjavik-turf-house-detail": {
+            "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQBACdASoYABAAPu1kqU2ppaOiMAgBMB2JZwDDNCHcmnzss0Rbye1C0i4AAP7tQhMZ7nwhxW2/L8o2eU3mPvzrjPMVD/VAI/OPLoHl+WXT/v7NhglqYE56YlsSJ88t2JXtBYrZbQ/zomabn0t33IuDOGWoNHo9JuQFptbg5Z5FBEYyJhmf8OchoAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/reykjavik-turf-house-hero": {
+            "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoYAA0APu1iqk4ppaQiMAgBMB2JYgCdMoADRj/eJcIlQkCoAPzZcAgRvrH01TEfMlhUPjSP1EpczAKRZSIFkgoPsjZ6h4vtrsUUC56NwSUazUWwnRGxofONvgAAAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/riad-zitoun-card": {
+            "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JQBOgApR16D0P/8VjuYAA/tBxT7+8146fStFE9+I9kV+qkGew4kyQG1pGG5mRtSYOWNPcQhZbMdsaxvYFyzhNAoGiBL0gY399Ts1HfUmpX9sK+ZLlOAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/riad-zitoun-detail": {
+            "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZwDDNCICk1gLG/DiBuRuoSe9KAD+7c1VApksVqyWAYoPJXTLyqB3uqLI+zIRH11l2VsAYwkdbwXNm38mG1dFN0NmSzEp+0do54TlzLzYzZRsHUWGq+l4mAKDpfM8b6xIvG+IUWY6x2/X7iqHx+QAAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/riad-zitoun-hero": {
+            "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBACdASoYAA0APu1iqU2ppaQiMAgBMB2JZQCsAB+MHKHPgEKS+y/XHwAA/uZ6cQUu3KJ35GOp3NfF0F6790dbqMVofuSNrmuxMdHXyV/o+1kJmliB1E1/qZaY9LM2IASYKdubQAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/seltjarnarnes-cabin-card": {
+            "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JbACdMoFWAARvwfNRjy5bmEk0AAD+6/5nAWVOJbsziub1Mb7IPai1kL8YLShZ8JCt5rW3TGV82QhLoqLfNGhPg2XK6q5YgBtJ3vflZbG7yEWQVvwixSOJLjaAlgznEhkTNmS6+/fKFF+U7h/35JpWS0nSYeQdst/SFEko4m4vG/0tiFXbkVwQ7MJNkAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/seltjarnarnes-cabin-detail": {
+            "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoAlvBI3+gij8yjnBmwAAP7l0J3RuYMqa1GtTeZrqLLk2O6F8rFgTRJrrZ9aW3ph/g4MG2FB8mQ6Uyx9QVKS14JIvbF/mGJe6IRutfJ2dxNOoatFpdAjdRlNsmhdEmqNA287KGRsIplxHKp8+UH499bgZ+6FLdBFl6kTtik+xeDYU/youNfbwgc4+sbG5IZyJIAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/seltjarnarnes-cabin-hero": {
+            "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAQBACdASoYAA0APu1kqU2ppaOiMAgBMB2JbACdMoADDWsy9XsMXjVWcAD+6+6Q4v6NSP3TR+ySR9deeMkN7jZmxDSFf1HWfUJE0HEw7U4xk3InAM+fKzy4P0ZYRJW4kXree3/6UhUZt3OL/4ikLcUE4Nf3wM60mDS57hV/NeyGPTP3CbPdIhzsgc32P0XJO/6FHYVTlMZet87WUf6c9O4pKC4MAA==",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/sierra-norte-lodge-card": {
+            "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JagC7L1yB7/9kYzrlIvMnXxaAAP7QpbtgmEyba4Nic3TcWhI66Spc2dN2k8gcuReU8tE7TmSaMmOF2f9o5u44zGsEcrVSzZcKqJ4slerbUZTEtL+GGXfhYXd0ZOAiAwTJs6FIbqJ49sB+WJbAVoUQO93Ag0OAAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/sierra-norte-lodge-detail": {
+            "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZkwGSvIJ7EOD8grT3cAA/uv2Mc24btxae+zg7KbmQND6OHGDc1tI2CqN0n9uXACxzibxbGxBp2dIv+Wc35AbSri8ar/K2dxhflQF9laKLMePMjvHaGWw7r0xNjBm8xz4O069YkRDjCNp40wdZkb+SeKKQiyacjI7qZ4AAAA=",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/sierra-norte-lodge-hero": {
+            "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoYAA0APu1iqk2ppaQiMAgBMB2JaAC7H8ACYYdBueLu5xLFY4AA/ukpLaFWjyD5m/G60/xxYZfwqOhDr8cw27E3bXSkSM+C6iU3RhXZLseFOyTZIn/3n7Uonsb8Dpw+ZY3Z1W+xktaX/VMlJPBw76RpHr6PByUQAAA=",
+            "width": 1200,
+            "height": 640
+        },
+        "stays/thu-bon-boathouse-card": {
+            "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoYABAAPu1iqk4ppaQiMAgBMB2JaACdMoADTlpG/ALGHMdlsoAA/q5Ed52IHis+4rXdBufsmcJtl0h9WKKmp0cFY6gaQYzUSCfj6wYkp1oneJrkA1X+n3SDtTbzQ9pedTAIAveFpSUenB6Wu50Y3FjcekXy0RX6mrxOoIJWZE/eancVK7/oiJqcsnyIAAAA",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/thu-bon-boathouse-detail": {
+            "lqip": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCsACIZncLN/ijc+5bBzO4AAP7OA9ZDGA+OtvRhskt5Nd2t9x6e5bZ78OHzQ5SrmDtwS1ZkGBhI7fqdx2N8SKLhP3TIi36vdkTi+8h2IngT1PiXe8OZnB/4gHS0ormK35rXLEYafvHq8GiXf4DVOJMmeUDC8gXc/JECwYn6TeuKygJ8xEZqIgAAAA==",
+            "width": 1200,
+            "height": 800
+        },
+        "stays/thu-bon-boathouse-hero": {
+            "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoYAA0APu1iqU2ppaOiMAgBMB2JagCdMoAluRgG2ZBGoZUZ6jlXwAD+W3Cx71QTmqReRPq2yP0fIyxUt65quGqtuEDms/Et3gjExAAAdEhKdWy5n+/LL06l9nr223rGPafH8EHbpXP51vWddifGDhymqcsYfS92iFPSO+rU4/0ChbgYdpsoIIAA",
+            "width": 1200,
+            "height": 640
+        }
+    }
+}

@@ -28,6 +28,8 @@ no real property is described.
 | **Right-to-left, properly** | `dir` is in the served HTML per locale, not applied by script afterwards, so there is no reflow on load. |
 | **Degrading safely** | A CDN outage, a 429, a rebuilding distribution or a total network failure all fall back to copy that is already on the page. |
 | **A CI localization loop** | Sources are pushed on merge; approved translations come back as a reviewable PR; an incomplete language fails the build. |
+| **Localization reaching the interactive parts** | The trip planner, the stay browser and the booking quote format dates, money, lists and plurals through `Intl` in the active locale. None of those values is a translated string. |
+| **A visible runtime layer** | The status chip in the footer names the live release, the release the HTML was built from, and which namespaces on this route came off the CDN. |
 
 ## Which one do I want?
 
@@ -105,7 +107,7 @@ pnpm dev                      # http://localhost:3020
 pnpm build                    # pulls published copy first, then builds
 OTA_SKIP_SYNC=1 pnpm build    # build against exactly what is committed
 pnpm check                    # typecheck + the two lint guards below
-pnpm placeholders             # regenerate the placeholder imagery
+pnpm photos                   # download the photography (see below)
 ```
 
 ### Environment
@@ -142,6 +144,67 @@ blob requests". The log is how you tell them apart.
    as the `TEXTSETU_API_KEY` repository secret.
 6. Enable *Settings → Actions → Allow GitHub Actions to create and approve pull
    requests*, or the translations PR cannot be opened.
+
+---
+
+## Photography
+
+The committed images under `public/img/` are real Unsplash photographs, not
+placeholders. The pipeline is three files:
+
+| File | Role |
+| --- | --- |
+| `content/photos.json` | The manifest: one Unsplash photo id per image slot. Edit this to swap a photo. |
+| `scripts/fetch-photos.mjs` | `pnpm photos`. Downloads, crops to the slot's ratio, writes the WebP files and regenerates the credits. |
+| `content/credits.json` | Generated. Rendered on `/about/`. |
+
+A **slot** — `destinations/kyoto-hero` — is the single identifier for an image.
+The crop is derived from its name (`site/*` is 21:9, `*-hero` is 15:8, the rest
+3:2), so a new slot cannot be given a ratio the layout has no CSS for.
+
+Three things the script does that are worth knowing before you point it at a
+different set of photos:
+
+- **It refuses an Unsplash+ photo.** That is a paid licence, not the free one,
+  and its metadata is indistinguishable from a free photo's — so the check lives
+  in code rather than in a reviewer's memory. This repository is public.
+- **It never hand-writes an attribution.** Photographer names come from the API
+  response for the id being downloaded, which is why `content/credits.json` is
+  generated and marked do-not-edit. An attribution somebody transcribed outlives
+  the photo it was copied from.
+- **It is not part of the build.** It talks to the network, and a build that can
+  be broken by someone else's CDN is a build that will be. The output is
+  committed; the script exists so the committed files are reproducible.
+
+Each image also carries a 24-pixel inline preview, painted as the wrapper's
+background and covered by the photo when it decodes. That costs no JavaScript
+and cannot shift the layout, because the box is already the right size.
+
+**Alt text is not here.** It lives in the translation catalogue with every other
+string a reader can perceive, and it is translated like the rest — which is the
+point, since it is the most commonly skipped string on a real travel site.
+
+---
+
+## The interactive pieces, and what each one is for
+
+Nothing on this site is bookable. The widgets exist because *localization has to
+reach the interactive parts of a product too*, and that is where it is usually
+missed.
+
+| Where | What it shows |
+| --- | --- |
+| **Trip planner** (home) | Month names, dates and guest counts formatted by `Intl` in the active locale. Not one of those values is a string in the catalogue. |
+| **Stay browser** (`/stays/`) | Sorting by name through `Intl.Collator`. Comparing translated names with `<` orders them by UTF-16 code unit, which is wrong in French and meaningless in Japanese and Arabic — and looks fine until someone switches language. |
+| **Booking quote** (`/booking/`) | Currency through a currency *code*, so the symbol, the separators and which side the symbol sits on all follow the reader. Plus plural categories on a number that changes as you click, which is where a catalogue missing Arabic's `zero`/`two`/`few` shows up immediately. |
+| **Experience filter** | A live count beside each chip — the cheapest place for a plural bug to hide. |
+| **Gallery** (a stay page) | A native `<dialog>`, so Escape, the focus trap and the inert background come from the platform. Arrow keys step in *reading* order, which reverses in RTL. |
+| **Status chip** (footer) | The runtime layer, made legible: live release, the release this HTML was built from, and which namespaces came off the CDN. |
+
+Every default in those widgets is a constant — never `new Date()`, never
+`navigator.language`. They are prerendered into the static HTML and then
+hydrated in the reader's browser, and a default derived from "now" differs
+between those two moments.
 
 ---
 
@@ -192,9 +255,10 @@ Each of these cost real time to find. They are commented at the site of the fix.
 - **Only `en` and `fr` are committed.** Translations are owned by TextSetu, not
   authored here; `src/i18n/request.ts` falls back to the source language for a
   locale with no committed file. Run `pnpm sync-translations` to pull the rest.
-- **The photographs are placeholder gradients.** Replace `public/img/**` with
-  licensed imagery at the same paths and widths, and record each file in
-  `content/credits.json`.
+- **The photographs are stock, and stock does not know what a Wanderlane house
+  looks like.** They are chosen to be plausible, not to be the property
+  described beside them. A real brand shoots its own; swapping one is a
+  one-line edit to `content/photos.json`.
 
 ## Licence
 

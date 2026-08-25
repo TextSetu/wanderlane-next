@@ -6,6 +6,7 @@ import { localeHref } from '@/i18n/routing';
 import { legalSlugs, legalPath } from '@/lib/legal';
 import { site } from '@/lib/site';
 import { LanguageSwitcher, PreviewBanner } from './language-switcher';
+import { OtaStatusChip } from './ota-status';
 
 /**
  * Nav + footer.
@@ -18,6 +19,7 @@ import { LanguageSwitcher, PreviewBanner } from './language-switcher';
 
 const NAV = [
     { href: '/destinations/', key: 'nav.destinations' },
+    { href: '/stays/', key: 'nav.stays' },
     { href: '/experiences/', key: 'nav.experiences' },
     { href: '/booking/', key: 'nav.booking' },
     { href: '/about/', key: 'nav.about' },
@@ -78,7 +80,11 @@ export function Chrome({ locale, children }: { locale: string; children: React.R
                             ))}
                         </nav>
                     </div>
-                    <p className="mt-8 text-xs text-sand-600">{t('footer.disclaimer')}</p>
+                    <div className="mt-8 flex flex-wrap items-end justify-between gap-6 border-t border-sand-200 pt-6">
+                        <p className="max-w-lg text-xs text-sand-600">{t('footer.disclaimer')}</p>
+                        {/* The runtime layer, made legible. See ota-status.tsx. */}
+                        <OtaStatusChip />
+                    </div>
                 </div>
             </footer>
         </>

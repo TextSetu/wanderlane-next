@@ -27,7 +27,15 @@ const ALWAYS = ['common', 'consent'] as const;
  * a widened fetch.
  */
 const EXTRA: Record<string, readonly string[]> = {
+    // A stay page renders its city's name.
     stays: ['destinations'],
+    // The home page ('' is the home segment) shows three experience titles and
+    // every destination's name.
+    '': ['destinations', 'experiences'],
+    // The experiences page groups by city.
+    experiences: ['destinations'],
+    // The booking page's quote widget lists every stay by name.
+    booking: ['stays'],
 };
 
 const DESTINATIONS = new Set<string>(destinationSlugs);

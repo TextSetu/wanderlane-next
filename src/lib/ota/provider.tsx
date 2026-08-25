@@ -28,6 +28,16 @@ import type { OtaMessages } from './types';
  * site's baseline hash matches the live release, so no blob is requested.
  */
 
+/**
+ * What the runtime layer is currently doing, for the status chip in the footer.
+ *
+ * ⚠️ `baseline` is the HEALTHY steady state, not a degraded one: a freshly
+ * deployed site's build matches the live release, so nothing is fetched. The
+ * chip has to say that, or every visitor to a correctly-working site reads it as
+ * "the update never arrived".
+ */
+export type OtaStatus = 'baseline' | 'checking' | 'live' | 'unreachable' | 'disabled';
+
 interface OtaState {
     /** Dropdown options. Starts as the build list, replaced by the manifest's. */
     options: LocaleOption[];
@@ -35,6 +45,11 @@ interface OtaState {
     previewLocale: string | null;
     setPreviewLocale: (code: string | null) => void;
     releaseVersion: number | null;
+    status: OtaStatus;
+    /** Namespaces served from the CDN on this route, in fetch order. */
+    liveModules: string[];
+    /** Re-run the manifest check now. Used by the status chip's button. */
+    refresh: () => void;
 }
 
 const OtaContext = createContext<OtaState>({
@@ -42,6 +57,9 @@ const OtaContext = createContext<OtaState>({
     previewLocale: null,
     setPreviewLocale: () => {},
     releaseVersion: BASELINE_RELEASE_VERSION,
+    status: 'baseline',
+    liveModules: [],
+    refresh: () => {},
 });
 
 export const useOta = () => useContext(OtaContext);
@@ -63,6 +81,13 @@ export function OtaProvider({
     const [releaseVersion, setReleaseVersion] = useState<number | null>(
         BASELINE_RELEASE_VERSION,
     );
+    // ⚠️ Every one of these starts at the value the SERVER would render. The
+    // status chip is a client component that Next also renders during the
+    // export, so a "checking" or timestamped initial state would mismatch
+    // hydration on the very element built to report the runtime's health.
+    const [status, setStatus] = useState<OtaStatus>('baseline');
+    const [liveModules, setLiveModules] = useState<string[]>([]);
+    const [nonce, setNonce] = useState(0);
     const pathname = usePathname();
 
     /**
@@ -101,16 +126,19 @@ export function OtaProvider({
     useEffect(() => {
         if (!OTA_ENABLED) {
             otaLog('disabled — serving exactly what was built');
+            setStatus('disabled');
             return;
         }
 
         let cancelled = false;
+        setStatus('checking');
 
         void (async () => {
             const manifest = await fetchManifest();
             if (cancelled) return;
             if (!manifest) {
                 otaLog('no manifest available — serving the build-time copy');
+                setStatus('unreachable');
                 return;
             }
 
@@ -125,6 +153,8 @@ export function OtaProvider({
                 otaLog(
                     `up to date at release v${manifest.release.version} — nothing to fetch`,
                 );
+                setStatus('baseline');
+                setLiveModules([]);
                 return;
             }
 
@@ -138,6 +168,7 @@ export function OtaProvider({
                     `release v${manifest.release.version} differs but no module could ` +
                         'be fetched — keeping the build-time copy',
                 );
+                setStatus('unreachable');
                 return;
             }
 
@@ -152,6 +183,8 @@ export function OtaProvider({
             setMessages((current) =>
                 previewLocale ? mergeMessages(baseline, fetched) : mergeMessages(current, fetched),
             );
+            setLiveModules(names);
+            setStatus('live');
         })();
 
         return () => {
@@ -160,7 +193,7 @@ export function OtaProvider({
         // Re-runs per route so a client-side navigation picks up the modules the
         // new page needs. `baseline` is a build constant and never changes.
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [locale, pathname, activeLocale, previewLocale]);
+    }, [locale, pathname, activeLocale, previewLocale, nonce]);
 
     /**
      * Keep `<html lang/dir>` in step while previewing.
@@ -179,9 +212,19 @@ export function OtaProvider({
     }, [activeLocale, previewLocale, locale, options]);
 
     const ctx = useMemo<OtaState>(
-        () => ({ options, previewLocale, setPreviewLocale, releaseVersion }),
+        () => ({
+            options,
+            previewLocale,
+            setPreviewLocale,
+            releaseVersion,
+            status,
+            liveModules,
+            // Bumping the nonce re-runs the effect above, which is the whole
+            // check — rather than a second copy of it that could drift.
+            refresh: () => setNonce((n) => n + 1),
+        }),
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [options, previewLocale, releaseVersion],
+        [options, previewLocale, releaseVersion, status, liveModules],
     );
 
     return (

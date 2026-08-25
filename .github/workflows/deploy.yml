@@ -1,0 +1,61 @@
+name: Deploy
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+    # Fired by the TextSetu webhook once a release is published. See README.
+    repository_dispatch:
+        types: [textsetu-release]
+    # ⚠️ Keep this even once the webhook works. An auto-disabled endpoint would
+    # otherwise leave the site silently frozen, and a fork has no webhook at all.
+    # Note GitHub disables `schedule:` on a public repo after 60 days of no
+    # activity, and scheduled runs are best-effort.
+    schedule:
+        - cron: '17 */6 * * *'
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# ⚠️ NOT `cancel-in-progress: true`. A webhook-triggered rebuild racing a push
+# must QUEUE. Cancelling can drop the newer content and leave the older deploy
+# live — the exact opposite of what the rebuild exists for.
+concurrency:
+    group: pages
+    cancel-in-progress: false
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            NEXT_PUBLIC_SITE_ORIGIN: https://demo1.textsetu.com
+            NEXT_PUBLIC_OTA_MANIFEST_URL: ${{ vars.OTA_MANIFEST_URL }}
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+            # `prebuild` runs sync-translations.mjs, which pulls the published
+            # copy and regenerates the locale list. It never fails the build.
+            # Nothing is committed back: a language added in TextSetu therefore
+            # gets a route on this deploy, with no PR in between.
+            - run: pnpm build
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                  path: out
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - uses: actions/configure-pages@v5
+            - id: deployment
+              uses: actions/deploy-pages@v4

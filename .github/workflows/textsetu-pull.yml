@@ -1,0 +1,34 @@
+name: Pull translations from TextSetu
+
+on:
+    schedule:
+        - cron: '0 6 * * *'
+    workflow_dispatch:
+    repository_dispatch:
+        types: [textsetu-release]
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    pull:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: TextSetu/github-action@v1
+              with:
+                  api_key: ${{ secrets.TEXTSETU_API_KEY }}
+                  cli_version: '1'
+                  upload_sources: false
+                  download_translations: true
+                  download_status: approved
+                  create_pull_request: true
+                  localization_branch_name: l10n_textsetu
+                  pull_request_title: 'chore(i18n): translations from TextSetu'
+                  pull_request_labels: 'i18n,automated'
+                  # ⚠️ A PR opened with the default GITHUB_TOKEN triggers NO
+                  # workflows — deliberate loop protection in GitHub. That would
+                  # silently leave the translations PR with no CI at all,
+                  # including the completeness gate. A PAT restores it.
+                  github_token: ${{ secrets.WORKFLOW_PAT }}

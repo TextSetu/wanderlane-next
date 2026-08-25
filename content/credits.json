@@ -1,0 +1,11 @@
+{
+    "_note": "Photography credits. The Unsplash and Pexels licences do not require attribution; we attribute anyway, and a brand claiming to be reputable should behave like one.",
+    "photos": [
+        { "file": "destinations/kyoto-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
+        { "file": "destinations/lisbon-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
+        { "file": "destinations/marrakech-hero.webp", "photographer": "—", "sourceUrl": "https://pexels.com", "license": "Pexels" },
+        { "file": "destinations/reykjavik-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" },
+        { "file": "destinations/oaxaca-hero.webp", "photographer": "—", "sourceUrl": "https://pexels.com", "license": "Pexels" },
+        { "file": "destinations/hoi-an-hero.webp", "photographer": "—", "sourceUrl": "https://unsplash.com", "license": "Unsplash" }
+    ]
+}

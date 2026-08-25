@@ -1,0 +1,13 @@
+{
+    "_generated": "scripts/sync-translations.mjs — do not edit by hand",
+    "_note": "Mirrors the live distribution's languageDetails. Committed so a fresh clone and an offline `pnpm dev` work, and so a language added upstream lands as a reviewable one-line diff.",
+    "sourceLanguage": "en",
+    "locales": [
+        { "code": "en", "label": "English",  "icon": "🇬🇧", "direction": "ltr", "htmlLang": "en", "ogLocale": "en_US" },
+        { "code": "fr", "label": "Français", "icon": "🇫🇷", "direction": "ltr", "htmlLang": "fr", "ogLocale": "fr_FR" },
+        { "code": "de", "label": "Deutsch",  "icon": "🇩🇪", "direction": "ltr", "htmlLang": "de", "ogLocale": "de_DE" },
+        { "code": "es", "label": "Español",  "icon": "🇪🇸", "direction": "ltr", "htmlLang": "es", "ogLocale": "es_ES" },
+        { "code": "ja", "label": "日本語",    "icon": "🇯🇵", "direction": "ltr", "htmlLang": "ja", "ogLocale": "ja_JP" },
+        { "code": "ar", "label": "العربية",  "icon": "🇸🇦", "direction": "rtl", "htmlLang": "ar", "ogLocale": "ar_AR" }
+    ]
+}

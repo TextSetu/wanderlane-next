@@ -1,0 +1,338 @@
+{
+    "common": {
+        "nav": {
+            "destinations": "Destinations",
+            "experiences": "Experiences",
+            "booking": "Booking",
+            "about": "About",
+            "stays": "Stays"
+        },
+        "locale": {
+            "previewBadge": "Preview",
+            "previewHint": "Languages marked “preview” have been published but this site has not been rebuilt yet, so they have no page of their own. Previewing swaps the copy in your browser only.",
+            "previewBanner": "Previewing {language} from release v{version}. This language has no static page yet — it will get one on the next deploy.",
+            "previewExit": "Back to {language}"
+        },
+        "cta": {
+            "viewStay": "View this stay",
+            "allStays": "All stays",
+            "allDestinations": "All destinations",
+            "enquire": "Check availability",
+            "readMore": "Read more"
+        },
+        "meta": {
+            "sleeps": "Sleeps {count, plural, one {# guest} other {# guests}}",
+            "bedrooms": "{count, plural, one {# bedroom} other {# bedrooms}}"
+        },
+        "footer": {
+            "blurb": "A small collection of independent stays in six cities, with guides written by the people who live there.",
+            "legal": {
+                "privacy": "Privacy",
+                "terms": "Terms",
+                "cookies": "Cookies",
+                "accessibility": "Accessibility"
+            },
+            "disclaimer": "Wanderlane is a fictional brand built as a public reference integration for TextSetu. Nothing here is bookable and no payment is ever taken."
+        }
+    },
+    "consent": {
+        "title": "Cookies",
+        "body": "We use one analytics cookie, and only if you say yes.",
+        "accept": "Accept",
+        "reject": "Reject"
+    },
+    "home": {
+        "meta": {
+            "title": "Small stays, well chosen",
+            "description": "Twelve independent places to stay in six cities, with guides written by people who live there."
+        },
+        "hero": {
+            "eyebrow": "Six cities, twelve houses",
+            "title": "Small stays, well chosen",
+            "body": "We keep a short list on purpose. Every house here has been slept in by someone on our team, in the season you are most likely to visit.",
+            "primary": "Browse destinations",
+            "secondary": "How we choose"
+        },
+        "featured": {
+            "title": "Where we are",
+            "body": "Six cities we know well enough to be useful about."
+        },
+        "promise": {
+            "title": "What a Wanderlane booking includes",
+            "items": {
+                "local": {
+                    "title": "A local who answers",
+                    "body": "Every house has one named person nearby. Not a call centre, not a chatbot — someone who can meet you at the door."
+                },
+                "honest": {
+                    "title": "Honest photographs",
+                    "body": "Shot on an ordinary day, in ordinary weather, with nothing tidied away that would not normally be tidied away."
+                },
+                "flexible": {
+                    "title": "Plain cancellation terms",
+                    "body": "Cancel free up to 14 days before arrival. Inside 14 days we refund whatever we can re-let."
+                }
+            }
+        }
+    },
+    "destinations": {
+        "meta": {
+            "title": "Destinations",
+            "description": "Six cities we know well enough to be useful about."
+        },
+        "title": "Destinations",
+        "intro": "Six cities. We do not add a seventh until someone on the team has lived in it through a bad month.",
+        "labels": {
+            "stays": "Stays in {city}",
+            "guide": "The guide"
+        },
+        "items": {
+            "kyoto": {
+                "name": "Kyoto",
+                "country": "Japan",
+                "tagline": "Machiya lanes, temple mornings",
+                "body": "Kyoto rewards the slow walker. Stay north of Nijo and the mornings belong to the neighbourhood: shutters going up, the smell of roasting hojicha, schoolchildren cutting through the shrine grounds. Our two houses here are both machiya — narrow wooden townhouses built for merchants, restored with their courtyard gardens intact.",
+                "heroAlt": "A narrow wooden townhouse lane in northern Kyoto at dawn"
+            },
+            "lisbon": {
+                "name": "Lisbon",
+                "country": "Portugal",
+                "tagline": "Tiled façades and a river that changes colour",
+                "body": "Lisbon is a city of thresholds — you are always about to arrive somewhere. We keep two places on the eastern hills, where the tram noise thins out after ten and the Tagus turns pewter at dusk. Both are a short walk from a bakery that has been arguing about custard tarts since 1937.",
+                "heroAlt": "A tiled Lisbon façade above a steep cobbled street"
+            },
+            "marrakech": {
+                "name": "Marrakech",
+                "country": "Morocco",
+                "tagline": "Courtyards built to keep the afternoon out",
+                "body": "Everything in the medina is oriented inward. A blank ochre wall opens onto a courtyard with a fig tree and a fountain, and the temperature drops five degrees as you step through. Our riad sits on a quiet derb ten minutes from the souks — close enough to hear them, far enough to sleep.",
+                "heroAlt": "A riad courtyard with a fountain and fig tree, shaded from the afternoon sun"
+            },
+            "reykjavik": {
+                "name": "Reykjavík",
+                "country": "Iceland",
+                "tagline": "Long light, short distances",
+                "body": "Reykjavík is small enough to cross on foot and strange enough that you keep stopping. In June the light never really goes; in February it arrives like an apology around eleven. Both our stays are built for weather — thick walls, deep windows, somewhere to leave wet boots.",
+                "heroAlt": "A turf-roofed house under low Icelandic light"
+            },
+            "oaxaca": {
+                "name": "Oaxaca",
+                "country": "Mexico",
+                "tagline": "Markets, mezcal, and a very good green",
+                "body": "Oaxaca de Juárez is a market town that happens to be a city. Our house in Jalatlaco sits on a street painted every colour at once, five minutes from a mercado where the mole vendors will make you taste all seven before letting you choose.",
+                "heroAlt": "A brightly painted street corner in the Jalatlaco neighbourhood"
+            },
+            "hoi-an": {
+                "name": "Hội An",
+                "country": "Vietnam",
+                "tagline": "A river town that glows after dark",
+                "body": "Hội An was a trading port for four hundred years and still moves at a river's pace. Our boathouse is on the Thu Bồn, past the lantern crowds, where fishermen work the channel at first light.",
+                "heroAlt": "Silk lanterns reflected in the Thu Bồn river at night"
+            }
+        }
+    },
+    "stays": {
+        "meta": {
+            "title": "Stays",
+            "description": "Twelve independent houses across six cities."
+        },
+        "title": "Stays",
+        "labels": {
+            "in": "in {city}",
+            "about": "About this house",
+            "details": "The details",
+            "backToCity": "More in {city}"
+        },
+        "items": {
+            "machiya-nishijin": {
+                "name": "The Nishijin Machiya",
+                "tagline": "Two floors, one courtyard, no hurry",
+                "body": "A restored weaver's house in Nishijin with the original lattice front and a garden you can see from the bath.",
+                "heroAlt": "A wooden-framed room opening onto a small Kyoto courtyard garden"
+            },
+            "kamo-riverhouse": {
+                "name": "Kamo Riverhouse",
+                "tagline": "Above the water, below the crowds",
+                "body": "A first-floor flat facing the Kamo, where the herons work the shallows all morning.",
+                "heroAlt": "A window seat overlooking the Kamo river in Kyoto"
+            },
+            "alfama-atelier": {
+                "name": "Alfama Atelier",
+                "tagline": "A painter's studio with the light still in it",
+                "body": "Top-floor rooms in Alfama with north windows, a small terrace, and eighty-one steps.",
+                "heroAlt": "A bright artist's studio with north-facing windows in Alfama"
+            },
+            "graca-rooftop": {
+                "name": "Graça Rooftop",
+                "tagline": "The whole city, from a folding chair",
+                "body": "A one-bedroom with roof access and the best cheap view in Lisbon.",
+                "heroAlt": "A rooftop terrace looking across Lisbon's tiled roofs"
+            },
+            "riad-zitoun": {
+                "name": "Riad Zitoun",
+                "tagline": "Four rooms around a fig tree",
+                "body": "A small riad on a quiet derb, with a plunge pool that is exactly cold enough.",
+                "heroAlt": "A quiet riad courtyard with a plunge pool and fig tree"
+            },
+            "palmeraie-annex": {
+                "name": "Palmeraie Annex",
+                "tagline": "Out where the noise stops",
+                "body": "A two-bedroom annex in the palm groves, twenty minutes and a world from the medina.",
+                "heroAlt": "A low adobe annex among date palms outside Marrakech"
+            },
+            "reykjavik-turf-house": {
+                "name": "Turf House No. 4",
+                "tagline": "Thick walls, deep windows",
+                "body": "A modern take on a turf house, ten minutes from the harbour, built for February.",
+                "heroAlt": "A modern turf-roofed house with deep-set windows"
+            },
+            "seltjarnarnes-cabin": {
+                "name": "Seltjarnarnes Cabin",
+                "tagline": "Where the peninsula runs out",
+                "body": "A cabin at the edge of the city with a clear northern horizon.",
+                "heroAlt": "A small cabin at the edge of a rocky Icelandic peninsula"
+            },
+            "casa-jalatlaco": {
+                "name": "Casa Jalatlaco",
+                "tagline": "A courtyard house on a painted street",
+                "body": "Three bedrooms around a courtyard, five minutes' walk from the mercado.",
+                "heroAlt": "A courtyard house with painted walls in Jalatlaco, Oaxaca"
+            },
+            "sierra-norte-lodge": {
+                "name": "Sierra Norte Lodge",
+                "tagline": "Pine forest, thin air, good silence",
+                "body": "A lodge in the mountains north of the city, run with the local community.",
+                "heroAlt": "A wooden lodge among pines in the Sierra Norte"
+            },
+            "thu-bon-boathouse": {
+                "name": "Thu Bồn Boathouse",
+                "tagline": "On the water, past the lanterns",
+                "body": "A boathouse on stilts upriver from the old town, with a jetty and two bicycles.",
+                "heroAlt": "A stilted boathouse on the Thu Bồn river"
+            },
+            "cam-thanh-garden": {
+                "name": "Cẩm Thanh Garden",
+                "tagline": "Among the coconut palms",
+                "body": "A garden house in the water-coconut palms, fifteen minutes by bike from the beach.",
+                "heroAlt": "A garden house among water-coconut palms near Hội An"
+            }
+        }
+    },
+    "experiences": {
+        "meta": {
+            "title": "Experiences",
+            "description": "Half-days worth rearranging your trip for."
+        },
+        "title": "Experiences",
+        "intro": "Six things worth rearranging a day for. Each is run by someone local, capped at eight people, and bookable only alongside a stay.",
+        "items": {
+            "kyoto-morning-market": {
+                "title": "Kyoto morning market walk",
+                "summary": "Two hours, before the shops open, with a cook who buys here daily."
+            },
+            "lisbon-tile-workshop": {
+                "title": "Lisbon tile workshop",
+                "summary": "Cut, paint and glaze one azulejo. It ships to you six weeks later."
+            },
+            "marrakech-bread-oven": {
+                "title": "The neighbourhood bread oven",
+                "summary": "Follow the dough from a family kitchen to the communal oven and back."
+            },
+            "reykjavik-tide-pools": {
+                "title": "Low-tide shoreline walk",
+                "summary": "A marine biologist, a thermos, and whatever the tide left behind."
+            },
+            "oaxaca-mole-kitchen": {
+                "title": "Seven moles, one kitchen",
+                "summary": "A full afternoon and a very long shopping list."
+            },
+            "hoi-an-basket-boat": {
+                "title": "Basket boat at first light",
+                "summary": "Out with the fishermen at 5am. Coffee afterwards, strong."
+            }
+        }
+    },
+    "booking": {
+        "meta": {
+            "title": "Booking",
+            "description": "How booking with Wanderlane works, and what the terms actually say."
+        },
+        "title": "Booking",
+        "intro": "There is nothing to pay on this page — Wanderlane is a demonstration site. The copy below is the real point: these are the strings a property changes at four o'clock on a Friday.",
+        "steps": {
+            "title": "How it works",
+            "choose": {
+                "title": "Choose your dates",
+                "body": "Minimum stay is two nights, three over a public holiday."
+            },
+            "hold": {
+                "title": "We hold the house for 24 hours",
+                "body": "No card details are taken while a hold is in place."
+            },
+            "confirm": {
+                "title": "Confirm with a deposit",
+                "body": "A 20% deposit confirms the booking. The balance is due 14 days before arrival."
+            }
+        },
+        "policy": {
+            "title": "Cancellation policy",
+            "body": "Cancel more than 14 days before arrival and the deposit is refunded in full. Inside 14 days we refund whatever we manage to re-let, and we will tell you either way within two working days.",
+            "updated": "This policy was last changed on 3 March 2026."
+        },
+        "taxes": {
+            "title": "Taxes and local charges",
+            "body": "Prices include VAT where it applies. City tourist tax is collected at the property and is not included in the price shown."
+        },
+        "note": "Every string on this page lives in TextSetu. Change one, publish, and it updates here within about a minute — with no rebuild and no deploy."
+    },
+    "about": {
+        "meta": {
+            "title": "About",
+            "description": "Who Wanderlane is, and why this site exists."
+        },
+        "title": "About Wanderlane",
+        "body": "Wanderlane is a fictional travel brand. It exists as a public, readable example of how to wire a real website to a translation management system without hacks — build-time catalogues, runtime updates over a CDN, and a language switcher driven by live data rather than a hardcoded array.",
+        "why": {
+            "title": "Why a travel brand?",
+            "body": "Because it is the least forgiving case. Long-form destination prose, legally sensitive booking terms, plural rules in guest counts, right-to-left copy, and a business that genuinely cannot wait for a deploy to fix a policy sentence."
+        },
+        "credits": {
+            "title": "Photography",
+            "body": "All photographs are used under the Unsplash and Pexels licences. Attribution below is voluntary."
+        }
+    },
+    "contact": {
+        "meta": {
+            "title": "Contact",
+            "description": "Get in touch with Wanderlane."
+        },
+        "title": "Get in touch",
+        "body": "This form does not send anywhere — it is here so the form labels have somewhere to live.",
+        "form": {
+            "name": "Your name",
+            "email": "Email address",
+            "message": "What can we help with?",
+            "submit": "Send enquiry",
+            "note": "We usually reply within one working day."
+        }
+    },
+    "legal": {
+        "meta": {
+            "title": "{document}"
+        },
+        "titles": {
+            "privacy": "Privacy policy",
+            "terms": "Terms of booking",
+            "cookies": "Cookie policy",
+            "accessibility": "Accessibility statement"
+        },
+        "updated": "Last updated {date}",
+        "toc": "On this page",
+        "note": "The body of this document is markdown in the repository, deliberately outside the translation catalogue. A legal document is reviewed and versioned as a whole, not edited string by string."
+    },
+    "notfound": {
+        "title": "That page has moved on",
+        "body": "The link may be old, or the page may only exist in a language this build has not deployed yet.",
+        "cta": "Back to the home page"
+    }
+}

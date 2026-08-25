@@ -1,0 +1,46 @@
+{
+    "name": "wanderlane-next",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Wanderlane — a reference integration of TextSetu content delivery (OTA) in a statically exported Next.js site.",
+    "license": "MIT",
+    "packageManager": "pnpm@10.30.0",
+    "engines": {
+        "node": ">=20.9"
+    },
+    "scripts": {
+        "dev": "next dev -p 3020",
+        "sync-translations": "node scripts/sync-translations.mjs",
+        "prebuild": "node scripts/sync-translations.mjs && node -e \"require('node:fs').rmSync('out',{recursive:true,force:true})\"",
+        "build": "next build && node scripts/flatten-default-locale.mjs",
+        "start": "pnpm dlx serve out -l 3020",
+        "typecheck": "tsc --noEmit",
+        "check:base-path": "node scripts/check-base-path.mjs",
+        "check:rtl": "node scripts/check-rtl.mjs",
+        "check": "pnpm typecheck && pnpm check:base-path && pnpm check:rtl",
+        "placeholders": "node scripts/generate-placeholders.mjs"
+    },
+    "dependencies": {
+        "next": "15.5.22",
+        "next-intl": "4.3.12",
+        "react": "19.1.1",
+        "react-dom": "19.1.1",
+        "react-markdown": "^10.1.0",
+        "remark-gfm": "^4.0.1"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "4.1.14",
+        "@types/node": "24.7.0",
+        "@types/react": "19.1.9",
+        "@types/react-dom": "19.1.7",
+        "tailwindcss": "4.1.14",
+        "typescript": "5.9.3",
+        "sharp": "0.34.5"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@tailwindcss/oxide",
+            "sharp"
+        ]
+    }
+}

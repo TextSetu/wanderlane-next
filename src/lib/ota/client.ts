@@ -163,12 +163,55 @@ export async function fetchModules(
 /**
  * Overlay fetched namespaces onto the built-in ones.
  *
- * ⚠️ Merges at the MODULE level and no deeper, on purpose. A published module is
- * the complete, authoritative copy of that namespace, so a key deleted upstream
- * must disappear rather than being resurrected from the baseline. The baseline
- * still covers every namespace that was NOT fetched, which is what makes a
- * partial fetch safe.
+ * ⚠️ Merges at the MODULE level and no deeper for a TARGET language, on purpose.
+ * A published module is the complete, authoritative copy of that namespace, so a
+ * key deleted upstream must disappear rather than being resurrected from the
+ * baseline. The baseline still covers every namespace that was NOT fetched,
+ * which is what makes a partial fetch safe.
+ *
+ * ⚠️ For the SOURCE language that argument inverts, and `deep` exists for it.
+ * A key added to `messages/<source>.json` does not reach the CDN until CI has
+ * pushed it and somebody has published — minutes at best, a weekend at worst.
+ * Replacing the module wholesale during that window drops the new key and
+ * next-intl renders its PATH into the page, so a button reads
+ * `stays.browser.sortPrice`. (Observed in the sibling SPA, against a live
+ * release.) The bundled copy was compiled from the same commit as the code
+ * asking for the key, so for the source language it is by construction at least
+ * as new as the release, and laying it underneath cannot resurrect anything.
  */
-export function mergeMessages(baseline: OtaMessages, fetched: OtaMessages): OtaMessages {
-    return { ...baseline, ...fetched };
+export function mergeMessages(
+    baseline: OtaMessages,
+    fetched: OtaMessages,
+    { deep = false }: { deep?: boolean } = {},
+): OtaMessages {
+    if (!deep) return { ...baseline, ...fetched };
+
+    const out: OtaMessages = { ...baseline };
+    for (const [module, published] of Object.entries(fetched)) {
+        const bundled = baseline[module];
+        out[module] = isPlainObject(bundled) && isPlainObject(published)
+            ? deepMerge(bundled, published)
+            : published;
+    }
+    return out;
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+    return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+/** `published` wins at every leaf. Arrays are values, not things to merge. */
+function deepMerge(
+    base: Record<string, unknown>,
+    over: Record<string, unknown>,
+): Record<string, unknown> {
+    const out: Record<string, unknown> = { ...base };
+    for (const [key, value] of Object.entries(over)) {
+        const existing = out[key];
+        out[key] =
+            isPlainObject(existing) && isPlainObject(value)
+                ? deepMerge(existing, value)
+                : value;
+    }
+    return out;
 }

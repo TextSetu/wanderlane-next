@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { localeDir } from '@/i18n/routing';
+import { defaultLocale as SOURCE_LANGUAGE, localeDir } from '@/i18n/routing';
 import { SITE_TIME_ZONE } from '@/lib/site';
 import { BASELINE_CONTENT_HASH, BASELINE_RELEASE_VERSION } from './baseline';
 import { fetchManifest, fetchModules, mergeMessages } from './client';
@@ -180,8 +180,13 @@ export function OtaProvider({
             // Preview replaces rather than overlays: the baseline is a DIFFERENT
             // language, so merging would leave untranslated namespaces showing
             // the built locale, which reads as a broken page rather than a preview.
+            // `deep` only when the copy on screen is the SOURCE language, where
+            // the bundle cannot be staler than the release. See mergeMessages.
+            const deep = activeLocale === SOURCE_LANGUAGE;
             setMessages((current) =>
-                previewLocale ? mergeMessages(baseline, fetched) : mergeMessages(current, fetched),
+                previewLocale
+                    ? mergeMessages(baseline, fetched, { deep })
+                    : mergeMessages(current, fetched, { deep }),
             );
             setLiveModules(names);
             setStatus('live');

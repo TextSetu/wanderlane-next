@@ -245,6 +245,26 @@ Each of these cost real time to find. They are commented at the site of the fix.
   the hand-constructed `NextIntlClientProvider` in `ota/provider.tsx` needs it
   passed explicitly, because it does not inherit the server config.
 
+
+## A key added here does not exist on the CDN yet
+
+Between adding a string to `messages/en.json` and CI pushing it to TextSetu for
+somebody to publish, the live release legitimately does not have it. A published
+module REPLACES the built-in one, so during that window the new key is dropped
+and next-intl renders its path into the page — a button reading
+`stays.browser.sortPrice`. (Observed in the sibling SPA against a live release,
+which is why this is written down rather than left to be rediscovered.)
+
+`mergeMessages(baseline, fetched, { deep })` lays the built-in copy underneath
+the published one, **and `deep` is set only when the copy on screen is the source
+language**. That bundle was compiled from the same commit as the code asking for
+the key, so for the source language it cannot be staler than the release.
+
+⚠️ The flag must stay off for every other language. A published module is the
+authoritative copy of its namespace, and deep-merging a stale build under a
+French release resurrects keys somebody deliberately deleted.
+
+
 ## Known trade-offs
 
 - **The build-time baseline inlines every namespace, not just the route's.**

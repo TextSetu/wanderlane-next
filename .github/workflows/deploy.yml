@@ -54,6 +54,31 @@ jobs:
             # copy and regenerates the locale list. It never fails the build.
             # Nothing is committed back: a language added in TextSetu therefore
             # gets a route on this deploy, with no PR in between.
+            # ⚠️ A basePath mistake is SILENT and total: the build succeeds, Pages
+            # serves it, and every asset and every internal link 404s because
+            # they are written relative to the origin root. It looks like a
+            # broken deploy rather than a misconfigured URL, so say which URL
+            # this build is actually valid for.
+            - name: Say which URL this build is valid for
+              run: |
+                  BASE="${{ vars.NEXT_PUBLIC_BASE_PATH }}"
+                  if [ -f public/CNAME ]; then
+                    DOMAIN=$(tr -d '[:space:]' < public/CNAME)
+                    echo "### Deploy target" >> "$GITHUB_STEP_SUMMARY"
+                    echo "" >> "$GITHUB_STEP_SUMMARY"
+                    echo "Built for the ROOT of \`https://$DOMAIN/\` (public/CNAME)." >> "$GITHUB_STEP_SUMMARY"
+                    if [ -n "$BASE" ]; then
+                      echo "::error::public/CNAME and NEXT_PUBLIC_BASE_PATH are mutually exclusive. A custom domain serves the site at the root; a base path is for a project page. Pick one."
+                      exit 1
+                    fi
+                    echo "" >> "$GITHUB_STEP_SUMMARY"
+                    echo "⚠️ Until \`$DOMAIN\` resolves to GitHub Pages, the only reachable URL is the project path — and this build 404s there, because every asset and link is written relative to the origin root. Add a DNS \`CNAME\` for \`$DOMAIN\` pointing at \`${{ github.repository_owner }}.github.io.\`, then set it as the custom domain in Settings → Pages." >> "$GITHUB_STEP_SUMMARY"
+                  elif [ -n "$BASE" ]; then
+                    echo "Built for \`https://${{ github.repository_owner }}.github.io$BASE/\`." >> "$GITHUB_STEP_SUMMARY"
+                  else
+                    echo "::warning::No public/CNAME and no NEXT_PUBLIC_BASE_PATH — this build only works at the root of a domain. On a project page every asset and link will 404."
+                  fi
+
             - run: pnpm build
             - uses: actions/upload-pages-artifact@v3
               with:

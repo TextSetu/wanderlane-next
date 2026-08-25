@@ -40,6 +40,16 @@ jobs:
                   node-version: 22
                   cache: pnpm
             - run: pnpm install --frozen-lockfile
+            # ⚠️ An undefined `vars.*` substitutes an EMPTY STRING, not nothing —
+            # which is how a build can silently point at the wrong place. The
+            # code falls back to a default now, but say so rather than hide it.
+            - name: Check the manifest URL is configured
+              run: |
+                  if [ -z "${{ vars.OTA_MANIFEST_URL }}" ]; then
+                    echo "::warning::OTA_MANIFEST_URL is not set (Settings -> Secrets and variables -> Actions -> Variables). Building against the default baked into src/lib/ota/config.ts."
+                  else
+                    echo "Building against ${{ vars.OTA_MANIFEST_URL }}"
+                  fi
             # `prebuild` runs sync-translations.mjs, which pulls the published
             # copy and regenerates the locale list. It never fails the build.
             # Nothing is committed back: a language added in TextSetu therefore

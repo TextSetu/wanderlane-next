@@ -28,7 +28,13 @@ jobs:
                   create_pull_request: true
                   localization_branch_name: l10n_textsetu
                   pull_request_title: 'chore(i18n): translations from TextSetu'
-                  pull_request_labels: 'i18n,automated'
+                  # ⚠️ No labels. `gh pr create --label` fails outright on a
+                  # label that does not exist in the repo, and it fails BEFORE
+                  # creating the PR — so `i18n,automated` cost us the whole
+                  # translations PR every run while the branch was already
+                  # pushed. Create the labels under Issues -> Labels first if
+                  # you want them back. (The action skips unknown labels with a
+                  # warning as of the next release; this repo pins @v1.)
                   # ⚠️ A PR opened with the default GITHUB_TOKEN triggers NO
                   # workflows — deliberate loop protection in GitHub. That would
                   # silently leave the translations PR with no CI at all,

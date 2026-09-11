@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "projectId": "8e5e967b-9d74-4d43-8555-96742a2f9f0b",
+  "sources": {},
+  "targets": {
+    "messages/ar.json": {
+      "hash": "sha256:474aa90769855ed9eb3356361b8570891339ddf42dc13cd445caaffffc1afaf6",
+      "at": "2026-09-11T11:46:19.862Z"
+    },
+    "messages/de.json": {
+      "hash": "sha256:91cb0035764e344a0a6251195e7a46abe5ee4d1a22c977283a85bf43d073d5e7",
+      "at": "2026-09-11T11:46:19.862Z"
+    },
+    "messages/fr.json": {
+      "hash": "sha256:80acb56decaef0c2aeee63752c331328ebb3cce454aa45b48e76ec69bac2edcf",
+      "at": "2026-09-11T11:46:19.862Z"
+    }
+  }
+}

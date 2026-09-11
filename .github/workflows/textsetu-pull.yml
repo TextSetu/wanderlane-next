@@ -19,7 +19,9 @@ jobs:
             - uses: TextSetu/github-action@v1
               with:
                   api_key: ${{ secrets.TEXTSETU_API_KEY }}
-                  cli_version: '1'
+                  # ⚠️ The CLI's version, NOT the action's `@v1` tag — they
+                  # are released independently, and the CLI is still 0.x.
+                  cli_version: '0.1'
                   upload_sources: false
                   download_translations: true
                   download_status: approved

@@ -17,7 +17,10 @@ jobs:
                   api_key: ${{ secrets.TEXTSETU_API_KEY }}
                   # ⚠️ Pinned. A demo repo that breaks because a CLI release
                   # changed behaviour is the worst possible advert.
-                  cli_version: '1'
+                  # ⚠️ This is the CLI's version, NOT the action's `@v1` tag —
+                  # they are released independently. `@textsetu/cli` is 0.x, so
+                  # `'1'` resolves to nothing and npm fails with ETARGET.
+                  cli_version: '0.1'
                   upload_sources: true
                   download_translations: false
                   create_pull_request: false
